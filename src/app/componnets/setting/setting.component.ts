@@ -24,7 +24,6 @@ export class SettingComponent implements OnInit {
       this.store.tipsList=[]
       this.store.setKey("saveCookie",this.settingItems[1])
     }
-    alert("success")
     window.location.reload()
   }
   resetSetting(){

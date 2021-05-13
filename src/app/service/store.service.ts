@@ -16,7 +16,20 @@ export class StoreService {
     name:"baidu",
     host:"https://www.baidu.com/s?ie=UTF-8&wd=",
     src:"../../assets/baidu.svg"
+  },{
+    name:"bing",
+    host:"https://cn.bing.com/search?q=",
+    src:"../../assets/bing.svg"
+  },{
+    name:"sogou",
+    host:"https://www.sogou.com/web?query=",
+    src:"../../assets/sogou.svg"
+  },{
+    name:"360",
+    host:"https://www.so.com/s?ie=utf-8&q=",
+    src:"../../assets/360.svg"
   }]
+  
   public themeList:any[]=[
     {
       src:"https://imdog.gitee.io/indeximg/a.jpg",

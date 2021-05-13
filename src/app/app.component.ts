@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { from } from 'rxjs';
 import {ViewChild,ElementRef} from "@angular/core"
 import {StoreService} from "./service/store.service"
-
+import {
+  HttpClient
+} from "@angular/common/http"
 
 @Component({
   selector: 'app-root',
@@ -14,31 +16,25 @@ export class AppComponent {
   title = 'homePage';
   @ViewChild("backGround") public eleBack:ElementRef
   public flag:number=0
-  public imgSrc1:string="../../../assets/setting.svg"
-  public imgSrc2:string="../../../assets/theme.svg"
   public Url:string
   public store:StoreService
   public themeList:any[]
   public newlink:string=''
   public key:string=''
-  public linkList:any[]=['http://chatjs.top']
+  public http
   public name:string='登录同步标签?'
   public showLogin:boolean=false
-  constructor(store:StoreService){
+  constructor(http: HttpClient,store:StoreService){
+    this.http=http
     this.store=store
-    this.Url=!!this.store.getKey("defaultBack")? this.store.getKey("defaultBack"):this.setDefaultBack()
-  }
-  hoverContainer(){
-    this.imgSrc1="../../../assets/setting-light.svg"
-    this.imgSrc2="../../../assets/theme-light.svg"
-  }
+    if(this.store.getKey("defaultBack")){
+        this.Url=this.store.getKey("defaultBack")? this.store.getKey("defaultBack"):this.setDefaultBack()
+    } else{
+      this.Url=this.setDefaultBack()
+  }}
   setDefaultBack(){
-    this.store.setKey("defaultBack",this.store.themeList[3].src)
+    this.store.setKey("defaultBack",'https://api.ww125.cn/v1/random?type=wallpaper')
     return this.store.getKey("defaultBack")
-  }
-  outContainer(){
-    this.imgSrc1="../../../assets/setting.svg"
-    this.imgSrc2="../../../assets/theme.svg"
   }
   switchView(flag:number){
     this.flag=flag
@@ -54,5 +50,11 @@ export class AppComponent {
   }
   offLogin(e){
     this.showLogin=false
-  }  
+  } 
+  next(){
+    function reload(){
+      return window.location.href
+    }
+    window.location.href=reload()
+  }
 }

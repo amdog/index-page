@@ -1,120 +1,183 @@
 /* You can add global styles to this file, and also import other style files */
-.search-box {
-  width: 100%;
-  height: 46px;
-  display: flex;
-  position: fixed;
-  bottom: 50%;
-  flex-wrap: wrap;
-  left: 0;
-  flex-basis: 612px;
 
-  justify-content: center;
-  align-items: center;
+.search-box {
+    width: 100%;
+    height: 46px;
+    display: flex;
+    position: fixed;
+    bottom: 65%;
+    flex-wrap: wrap;
+    left: 0;
+    justify-content: center;
+    align-items: center;
 }
 
 .search-box>input {
-  width: 500px;
-  height: 42px;
-  background: none;
-  border-radius: 7px;
-  border: solid 1px #000;
-  outline: rgb(255, 99, 71);
+    width: 500px;
+    height: 42px;
+    background: none;
+    border-radius: 7px;
+    border: solid 1px rgb(88, 86, 86);
+    background-color: rgba(228, 227, 227, .7);
+    outline: rgb(255, 99, 71);
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.search-box>div>img {
+    margin-right: 10px;
 }
 
 .search-box>div {
-  overflow: hidden;
-  width: 100px;
-  border-radius: 7px;
-  border: solid 1px #000;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin-left: 10px;
-  height: 42px;
+    overflow: hidden;
+    width: 100px;
+    border-radius: 7px;
+    border: solid 1px rgb(88, 86, 86);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: rgb(228, 227, 227);
+    margin-left: -2px;
+    height: 42px;
+    border-top-left-radius: 0;
+    border-left: rgb(190, 189, 189) solid 1px;
+    border-bottom-left-radius: 0;
 }
 
 .switch-button {
-  border-radius: 6px;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  background-color: #000;
+    border-radius: 5px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    background-color: #555;
+}
+
+.login-box {
+    display: flex;
+    position: fixed;
+    right: 100px;
+    justify-content: space-between;
+    align-items: center;
+    top: 40px;
+    background-color: #fff;
+    width: 150px;
+    cursor: pointer;
+    height: 40px;
+    border-radius: 7px;
+}
+
+.login-box span:hover {
+    text-decoration: underline;
+}
+
+.login-box span {
+    width: 50%;
+    height: 40px;
+    border-left: #777 solid 1px;
+    text-align: center;
+    border-bottom-right-radius: 7px;
+    border-top-right-radius: 7px;
+    line-height: 40px;
+    letter-spacing: 5px;
+    background-color: #28a745;
+    color: #fff;
+}
+
+.login-box img {
+    margin-left: 20px;
 }
 
 .tips {
-  position: fixed;
-  bottom: 50%;
-  margin-bottom: 86px;
-  left: 50%;
-  margin-left: -20%;
-  width: 40%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  margin-bottom: -200px;
-  flex-wrap: wrap;
-  height: 150px;
+    position: fixed;
+    bottom: 50%;
+    margin-bottom: 86px;
+    left: 50%;
+    margin-left: -20%;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: -200px;
+    flex-wrap: wrap;
+    height: 150px;
 }
 
 .tips>span {
-  display: inline-block;
-  width: auto;
-  background-color: #fff;
-  color: #666;
-  border-radius: 0.3em;
-  cursor: pointer;
-  margin: 10px;
+    display: inline-block;
+    width: auto;
+    padding: 5px;
+    background-color: #fff;
+    color: #666;
+    border-radius: 0.3em;
+    cursor: pointer;
+    margin: 10px;
 }
 
 .tips>span:nth-child(2n) {
-  margin: 0px;
+    margin: 0px;
 }
 
 .box-tab {
-  position: fixed;
-  bottom: 50%;
-  margin-bottom: 86px;
-  left: 50%;
-  margin-left: -20%;
-  width: 40%;
-  display: flex;
-  justify-content: center;
-  margin-bottom: -200px;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  height: 150px;
+    position: fixed;
+    bottom: 50%;
+    margin-bottom: 86px;
+    left: 50%;
+    margin-left: -20%;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: -200px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 150px;
 }
 
 .box-tab>span:nth-child(1) {
-  color: #444;
+    color: #444;
 }
 
 .box-tab>span:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .box-tab>div {
-  width: 600px;
-  height: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-wrap: wrap;
+    width: 600px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 .box-tab>div>div {
-  margin: 5px;
-  width: 32px;
-  height: 32px;
+    margin: 5px;
+    width: 32px;
+    height: 32px;
+}
+
+.add {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all .5s;
+}
+
+.add>input {
+    width: 100px;
+    outline: none;
+    border: #aaa solid 1px;
+    border-radius: 5px;
+    height: 32px;
+    background-color: rgba(228, 227, 227, .7);
 }
 
 .box-tab>div>div>img {
-  box-shadow: 0px 0px 1px 1px #999;
-  border-radius: 32px;
-  width: 100%;
-  height: 100%;
+    box-shadow: 0px 0px 1px 1px #999;
+    border-radius: 32px;
+    width: 100%;
+    height: 100%;
 }

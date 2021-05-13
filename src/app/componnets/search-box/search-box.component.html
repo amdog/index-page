@@ -1,28 +1,37 @@
+<div class="login-box" (click)="toShowLogin()">
+    <img src="../../assets/head.svg">
+    <span>
+      {{name == '登录同步标签?'?'登录':'退出'}}
+    </span>
+</div>
+
 <div class="search-box">
     <input type="text" [(ngModel)]="keywords" (keyup)="searchAction($event)" (blur)="onTab()" (focus)="offTab()" #inputKeyWords spellcheck="false" />
     <div>
-        <img [src]="src" (click)="searchAction(1)"> 
+        <img [src]="src" (click)="searchAction(1)">
         <div class="switch-button" title="切换搜索引擎" (click)="swithEngine()">
-                <img src="../../assets/toright.svg">
+            <img src="../../assets/toright.svg">
         </div>
     </div>
 </div>
 <div class="tips" *ngIf="!showTab">
-        <span *ngFor="let item of store.tipsList " (click)="tipToKey(item)">{{item}}</span> 
+    <span *ngFor="let item of store.tipsList " (click)="tipToKey(item)">{{item}}</span>
 </div>
 <div class="box-tab" *ngIf="showTab">
+
     <span (click)="toShowLogin()">
       {{name}}
     </span>
+
     <br>
     <br>
     <div>
-    <div  *ngFor="let item of linkList" (contextmenu)="deletethis($event,item)" (click)='searchBytag(item)' [title]='item' >
-      <img [src]="item + '/favicon.ico'">
+        <div *ngFor="let item of linkList" (contextmenu)="deletethis($event,item)" (click)='searchBytag(item)' [title]='item'>
+            <img [src]="item + '/favicon.ico'">
+        </div>
+        <div title="添加" class="add">
+            <input *ngIf='clickAdd % 2==0' type="text" [(ngModel)]="add" placeholder="输入链接地址"><img src="../assets/add.svg" (click)='doAdd()'>
+        </div>
     </div>
-    <div title="添加" (click)="inputLink()">
-      <img src="../assets/add.svg">
-    </div>
-    </div>
-  </div>
+</div>
 <app-login [show]="showLogin" (outer)="offLogin()"></app-login>

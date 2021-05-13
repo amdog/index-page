@@ -1,17 +1,23 @@
 <div class="background" #backGround>
 </div>
-<div class="container" (mouseover)="hoverContainer()" (mouseout)="outContainer()">
+<div class="container">
     <span (mouseover)="switchView(1)">
-        <img [src]="imgSrc1">
+        <img src="../../../assets/setting-light.svg">
         <span>设置</span>
     </span>
     <span (mouseover)="switchView(2)">
-        <img [src]="imgSrc2">
+        <img src="../../../assets/theme-light.svg">
         <span>主题</span>
     </span>
     <br>
     <app-setting *ngIf="flag ===1"></app-setting>
     <app-theme *ngIf="flag === 2"></app-theme>
+</div>
+<div class="left-btn" (click)='next()'>
+    <img src="../../../assets/toleft.svg">
+</div>
+<div class="right-btn" (click)='next()'>
+    <img src="../../../assets/toright.svg">
 </div>
 <app-search-box></app-search-box>
 <app-login [show]="showLogin" (outer)="offLogin($event)"></app-login>
